@@ -14,19 +14,18 @@ function validateName() {
 }
 
 function validateEmaile() {
-    var email = document.getElementById("contact-email").value
-    if (email.length == 0) {
-        emailError.innerHTML = "Email is required."
-        return false
-      }
-      if (email.match(/^[a-z0-9]+@[a-z0-9]+\.(com)$/)) {
-        emailError.innerHTML = "Email is invalid."
-        return false
-      }
-      emailError.innerHTML = ""
-      return true
+  var email = document.getElementById("contact-email").value
+  if (email.length == 0) {
+    emailError.innerHTML = "Email is required."
+    return false
+  }
+  if (email.match(/^[a-z0-9]+@[a-z0-9]+\.(com)$/)) {
+    emailError.innerHTML = "Email is invalid."
+    return false
+  }
+  emailError.innerHTML = ""
+  return true
 }
-
 
 function validatePhone() {
   var phone = document.getElementById("contact-phone").value
@@ -38,7 +37,7 @@ function validatePhone() {
     phoneError.innerHTML = "Phone number should be 10 digit number."
     return false
   }
-  
+
   phoneError.innerHTML = ""
   return true
 }
