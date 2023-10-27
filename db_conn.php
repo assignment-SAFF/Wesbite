@@ -16,7 +16,7 @@ if(!$conn){
 }
 
 $sql_insert = "INSERT INTO user_info (user_name, user_email, user_phone)
-VALUES ('$user_Name' ,'$user_Email', $user_Phone)";
+VALUES ('$user_Name' ,'$user_Email', '$user_Phone')";
 mysqli_query($conn, $sql_insert);
 
 
@@ -40,6 +40,7 @@ $result = mysqli_query($conn, $sql_select);
         <div class="table-styles">
         <table>
             <tr>
+               <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
@@ -49,6 +50,7 @@ $result = mysqli_query($conn, $sql_select);
                 {
             ?>
             <tr>
+            <td><?php echo $rows['id'];?></td>
                 <td><?php echo $rows['user_name'];?></td>
                 <td><?php echo $rows['user_email'];?></td>
                 <td><?php echo $rows['user_phone'];?></td>
