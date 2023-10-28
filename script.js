@@ -19,7 +19,7 @@ function validateEmaile() {
     emailError.innerHTML = "Email is required."
     return false
   }
-  if (email.match(/^[a-z0-9]+@[a-z0-9]+\.(com)$/)) {
+  if (!email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
     emailError.innerHTML = "Email is invalid."
     return false
   }
