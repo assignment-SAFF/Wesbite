@@ -1,19 +1,9 @@
-
 <?php
+include("db_conn.php");
+
 $user_Name =$_POST['name'];
 $user_Email=$_POST['email'];
 $user_Phone=$_POST['phone'];
-
-$serverName ='localhost';
-$userName='root';
-$password='';
-$dbName='saff_db';
-
-$conn=mysqli_connect($serverName ,$userName ,$password ,$dbName);
-
-if(!$conn){
-    die('Connection failed'.mysqli_connect_error());
-}
 
 $sql_insert = "INSERT INTO user_info (user_name, user_email, user_phone)
 VALUES ('$user_Name' ,'$user_Email', '$user_Phone')";
@@ -28,7 +18,7 @@ $result = mysqli_query($conn, $sql_select);
 <html>
   <head>
     <title>User Details</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
   <div class="contact-form">
@@ -66,8 +56,3 @@ $result = mysqli_query($conn, $sql_select);
   </div>
   </body>
 </html>
-
-
-
-
-
